@@ -13,6 +13,7 @@
     --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-amber-100: oklch(96.2% 0.059 95.617);
     --color-amber-200: oklch(92.4% 0.12 95.746);
+    --color-amber-500: oklch(76.9% 0.188 70.08);
     --color-emerald-500: oklch(69.6% 0.17 162.48);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -174,15 +175,6 @@
   }
 }
 @layer utilities {
-  .left-1 {
-    left: var(--spacing);
-  }
-  .left-1\/2 {
-    left: calc(1 / 2 * 100%);
-  }
-  .m-1 {
-    margin: var(--spacing);
-  }
   .m-2 {
     margin: calc(var(--spacing) * 2);
   }
@@ -195,8 +187,17 @@
   .m-7 {
     margin: calc(var(--spacing) * 7);
   }
+  .m-auto {
+    margin: auto;
+  }
+  .mx-2 {
+    margin-inline: calc(var(--spacing) * 2);
+  }
   .mx-3 {
     margin-inline: calc(var(--spacing) * 3);
+  }
+  .mx-4 {
+    margin-inline: calc(var(--spacing) * 4);
   }
   .mx-auto {
     margin-inline: auto;
@@ -207,20 +208,11 @@
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
-  .ml-4 {
-    margin-left: calc(var(--spacing) * 4);
-  }
-  .ml-6 {
-    margin-left: calc(var(--spacing) * 6);
-  }
   .ml-8 {
     margin-left: calc(var(--spacing) * 8);
   }
   .flex {
     display: flex;
-  }
-  .grid {
-    display: grid;
   }
   .table {
     display: table;
@@ -231,32 +223,26 @@
   .w-1\/2 {
     width: calc(1 / 2 * 100%);
   }
-  .w-\[\%\] {
-    width: %;
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
-  .w-\[70\%\] {
-    width: 70%;
+  .w-9 {
+    width: calc(var(--spacing) * 9);
   }
-  .w-\[70\] {
-    width: 70;
+  .w-15 {
+    width: calc(var(--spacing) * 15);
   }
-  .w-\[80\%\] {
-    width: 80%;
+  .w-20 {
+    width: calc(var(--spacing) * 20);
   }
-  .w-\[85\%\] {
-    width: 85%;
+  .w-30 {
+    width: calc(var(--spacing) * 30);
   }
-  .w-\[85\] {
-    width: 85;
+  .w-50 {
+    width: calc(var(--spacing) * 50);
   }
-  .w-\[98\%\] {
-    width: 98%;
-  }
-  .w-\[98\] {
-    width: 98;
-  }
-  .w-full {
-    width: 100%;
+  .w-500 {
+    width: calc(var(--spacing) * 500);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -264,47 +250,17 @@
   .resize {
     resize: both;
   }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .justify-around {
     justify-content: space-around;
   }
   .justify-between {
     justify-content: space-between;
   }
-  .justify-center {
-    justify-content: center;
-  }
-  .justify-center-safe {
-    justify-content: safe center;
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
-  .gap-2\.5 {
-    gap: calc(var(--spacing) * 2.5);
-  }
-  .gap-3 {
-    gap: calc(var(--spacing) * 3);
-  }
-  .gap-4 {
-    gap: calc(var(--spacing) * 4);
-  }
-  .gap-6 {
-    gap: calc(var(--spacing) * 6);
-  }
-  .rounded {
-    border-radius: 0.25rem;
-  }
-  .rounded-full {
-    border-radius: calc(infinity * 1px);
-  }
   .rounded-md {
     border-radius: var(--radius-md);
-  }
-  .rounded-none {
-    border-radius: 0;
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
@@ -316,10 +272,6 @@
   .border-1 {
     border-style: var(--tw-border-style);
     border-width: 1px;
-  }
-  .border-2 {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
   }
   .border-\[\#EEE4DA\] {
     border-color: #EEE4DA;
@@ -333,47 +285,14 @@
   .bg-amber-50 {
     background-color: var(--color-amber-50);
   }
-  .bg-amber-100 {
-    background-color: var(--color-amber-100);
-  }
-  .bg-amber-200 {
-    background-color: var(--color-amber-200);
-  }
-  .bg-red-400 {
-    background-color: var(--color-red-400);
-  }
-  .bg-red-500 {
-    background-color: var(--color-red-500);
-  }
-  .bg-white {
-    background-color: var(--color-white);
+  .bg-amber-500 {
+    background-color: var(--color-amber-500);
   }
   .p-1 {
     padding: var(--spacing);
   }
-  .p-2 {
-    padding: calc(var(--spacing) * 2);
-  }
   .p-3 {
     padding: calc(var(--spacing) * 3);
-  }
-  .px-1 {
-    padding-inline: var(--spacing);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
-  }
-  .px-3 {
-    padding-inline: calc(var(--spacing) * 3);
-  }
-  .px-4 {
-    padding-inline: calc(var(--spacing) * 4);
-  }
-  .px-7 {
-    padding-inline: calc(var(--spacing) * 7);
-  }
-  .px-55 {
-    padding-inline: calc(var(--spacing) * 55);
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -391,6 +310,9 @@
   }
   .text-emerald-500 {
     color: var(--color-emerald-500);
+  }
+  .text-red-400 {
+    color: var(--color-red-400);
   }
   .text-white {
     color: var(--color-white);
