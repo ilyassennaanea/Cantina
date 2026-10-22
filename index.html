@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="/my-project/output.css">  -->
     <title>Youcode Cantine</title>
-    <link href="./src/output.css" rel="stylesheet">
+    <!-- <link href="./src/output.css" rel="stylesheet"> -->
 
 
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-amber-50">
@@ -25,7 +26,7 @@
 
     </header>
     </header>
-    <main fixed inset-0 bg-black/50 z-50>
+    <main>
         <section class=" ml-8"><br>
             <h1 class="text-3xl font-bold text-[#342B25]">À table cette semaine</h1><br>
             <p class="text-[#342B25]">Des repas simples, variés et dans le budget.</p><br>
@@ -43,8 +44,8 @@
                 </div>
             </div>
         </section><br>
-        <section class="flex flex-wrap  gap-2 mt-2 mx-4">
-            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl w-1/2">
+        <section class="mx-6 grid grid-cols-2 gap-4">
+            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
                 <div class="flex justify-around ">
                     <p><b>Lundi</b><br>19oct</p>
                     <p>PRÊT</p>
@@ -82,7 +83,7 @@
                     <p><b>42/50 DH</b></p>
                 </div>
             </article>
-            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl w-1/2">
+            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
                 <div class="flex justify-around ">
                     <p><b>Mardi</b><br>19oct</p>
                     <p>PRÊT</p>
@@ -120,7 +121,7 @@
                     <p><b>42/50 DH</b></p>
                 </div>
             </article>
-            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl w-1/2">
+            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
                 <div class="flex justify-around ">
                     <p><b>Mercredi</b><br>19oct</p>
                     <p>PRÊT</p>
@@ -158,7 +159,7 @@
                     <p><b>42/50 DH</b></p>
                 </div>
             </article>
-            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl w-1/2">
+            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
                 <div class="flex justify-around ">
                     <p><b>Jeudi</b><br>19oct</p>
                     <p>PRÊT</p>
@@ -196,7 +197,7 @@
                     <p><b>42/50 DH</b></p>
                 </div>
             </article>
-            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl w-1/2">
+            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
                 <div class="flex justify-around ">
                     <p><b>Vendredi</b><br>19oct</p>
                     <p>PRÊT</p>
@@ -256,11 +257,11 @@
             </div>
             
         </section>
-        <dialog id="recipeDialog" class="absolute inset-0 m-auto  p-6 rounded-lg shadow-xl">
-            <div class="h-62 w-240 bg-[#FFFDF9] text-[#342B25] border border-[#EEE4DA]  rounded-xl">
-                <form id="recipeForm" class="">
+        <dialog id="recipeDialog" class="  m-auto p-6 rounded-lg ">
+            <div class="h-62 bg-[#fffaf9] text-[#342B25] border border-[#EEE4DA] w-3xl  rounded-xl m-auto">
+                <form id="recipeForm">
                     <input name="name" placeholder="Nom de la recette" required><br>
-                    <select name="category">
+                    <select name="category" class="">
                         <option>Entrée</option>
                         <option>Plat</option>
                         <option>Dessert</option>
@@ -292,6 +293,8 @@ form.addEventListener('submit', (event) => {
   dialog.close();
 });
 </script>
+
+
 </body>
 
 </html>
