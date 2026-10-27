@@ -45,7 +45,7 @@
             </div>
         </section><br>
         <section class="mx-6 grid grid-cols-2 gap-4">
-            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
+            <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">   
                 <div class="flex justify-around ">
                     <p><b>Lundi</b><br>19oct</p>
                     <p>PRÊT</p>
@@ -53,34 +53,28 @@
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Entrée </p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Entrée </option>
-                        <option value="Gratin">Salade maroccain</option>
-                        <option value="Gratin">Gratin</option>
-                    </select>
+                    <select onchange="resetDef('lundi')" id="lundientre" data-category="Entrée" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                       <option value="default">---default---</option>
+                    </select> 
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Plat</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un plat</option>
-                        <option value="tajine">Tajine poulet</option>
-                        <option value="bastila">Bastila</option>
+                    <select onchange="resetDef('lundi')" id="lundiplat" data-category="Plat" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                       <option value="default">---default---</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Dessert</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Dessert</option>
-                        <option value="Orange">Orange</option>
-                        <option value="banane">banane</option>
+                    <select onchange="resetDef('lundi')" id="lundidesert" data-category="Dessert" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                       <option value="default">---default---</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="flex justify-around">
                     <p>Total</p>
-                    <p><b>42/50 DH</b></p>
+                    <p><b id="totallundi"></b><b>/50 DH</b></p>
                 </div>
             </article>
             <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
@@ -91,34 +85,28 @@
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Entrée </p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Entrée </option>
-                        <option value="Gratin">Salade maroccain</option>
-                        <option value="Gratin">Gratin</option>
+                    <select onchange="resetDef('mardi')" id="mardientre" data-category="Entrée" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Plat</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un plat</option>
-                        <option value="tajine">Tajine poulet</option>
-                        <option value="bastila">Bastila</option>
+                    <select onchange="resetDef('mardi')" id="mardiplat" data-category="Plat" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Dessert </p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Dessert</option>
-                        <option value="Orange">Orange</option>
-                        <option value="banane">banane</option>
+                    <select onchange="resetDef('mardi')" id="mardidesert" data-category="Dessert" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="flex justify-around">
-                    <p>Total</p>
-                    <p><b>42/50 DH</b></p>
+                    <p >Total</p>
+                    <p><b id = "totalmardi">42/50 DH</b></p>
                 </div>
             </article>
             <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
@@ -129,34 +117,28 @@
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Entrée</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Entrée </option>
-                        <option value="Gratin">Salade maroccain</option>
-                        <option value="Gratin">Gratin</option>
+                    <select onchange="resetDef('mercredi')" id="mercredientre" data-category="Entrée" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Plat</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un plat</option>
-                        <option value="tajine">Tajine poulet</option>
-                        <option value="bastila">Bastila</option>
+                    <select onchange="resetDef('mercredi')" id="mercrediplat" data-category="Plat" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Dessert</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Dessert</option>
-                        <option value="Orange">Orange</option>
-                        <option value="banane">banane</option>
+                    <select onchange="resetDef('mercredi')" id="mercredidesert" data-category="Dessert" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="flex justify-around">
-                    <p>Total</p>
-                    <p><b>42/50 DH</b></p>
+                    <p >Total</p>
+                    <p><b id="totalmercredi">42/50 DH</b></p>
                 </div>
             </article>
             <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
@@ -167,34 +149,28 @@
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Entrée </p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Entrée </option>
-                        <option value="Gratin">Salade maroccain</option>
-                        <option value="Gratin">Gratin</option>
+                    <select onchange="resetDef('jeudi')" id="jeudientre" data-category="Entrée" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Plat</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un plat</option>
-                        <option value="tajine">Tajine poulet</option>
-                        <option value="bastila">Bastila</option>
+                    <select onchange="resetDef('jeudi')" id="jeudiplat" data-category="Plat" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Dessert </p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Dessert</option>
-                        <option value="Orange">Orange</option>
-                        <option value="banane">banane</option>
+                    <select onchange="resetDef('jeudi')" id="jeudidesert" data-category="Dessert" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="flex justify-around">
-                    <p>Total</p>
-                    <p><b>42/50 DH</b></p>
+                    <p >Total</p>
+                    <p><b id="totaljeudi">42/50 DH</b></p>
                 </div>
             </article>
             <article class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl ">
@@ -205,95 +181,63 @@
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Entrée </p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Entrée </option>
-                        <option value="Gratin">Salade maroccain</option>
-                        <option value="Gratin">Gratin</option>
+                    <select onchange="resetDef('vendredi')" id="vendredientre" data-category="Entrée" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Plat</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un plat</option>
-                        <option value="tajine">Tajine poulet</option>
-                        <option value="bastila">Bastila</option>
+                    <select onchange="resetDef('vendredi')" id="vendrediplat" data-category="Plat" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="p-3">
                     <p>Dessert</p>
-                    <select class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
-                        <option value="default">chiosis un Dessert</option>
-                        <option value="Orange">Orange</option>
-                        <option value="banane">banane</option>
+                    <select onchange="resetDef('vendredi')" id="vendredidesert" data-category="Dessert" class="font-bold border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl">
+                        <option value="default">----default----</option>
                     </select>
                 </div>
                 <hr class="mx-3 text-[#EEE4DA]">
                 <div class="flex justify-around">
-                    <p>Total</p>
-                    <p><b>42/50 DH</b></p>
+                    <p >Total</p>
+                    <p><b id="totalvendredi">42/50 DH</b></p>
                 </div>
             </article>
 
         </section>
         <section class=" border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl m-7">
-            <div class="flex justify-around">
-                <h3><b>Quelques recettes en réserve</b></h3>
-                <button id="openRecipeForm" class="border-1 rounded-md mt-1 p-1 bg-[#B85F3D] text-white"><b>+ Ajouter
-                        une
-                        recette</b></button>
+            <div class="flex justify-around mt-2">
+                <h3 class=" bg-[#fffaf9] text-[#342B25] border border-[#EEE4DA] rounded-xl p-3 m-auto"><b>Quelques recettes en réserve :</b></h3>
+                <button id="openRecipeForm" class="border-1 rounded-md mt-1 p-1 bg-[#B85F3D] text-white mb-1 mr-1"><b>+ Ajouter une recette</b></button>
             </div>
             <div id="recipeList" class="flex flex-wrap">
-                <div class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl p-3 m-2">
-                    <p><b>Harira</b>· Entrée · 8 DH</p>
-                </div>
-                <div class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl p-3 m-2">
-                    <p><b>Tajine poulet </b>· Plat · 27 DH</p>
-                </div>
-                <div class="border border-[#EEE4DA] bg-[#FFFDF9] text-[#342B25] rounded-xl p-3 m-2">
-                    <p><b>Salade de fruits</b> · Dessert · 7 DH</p>
-                </div>
+                
             </div>
             
         </section>
-        <dialog id="recipeDialog" class="  m-auto p-6 rounded-lg ">
-            <div class="h-62 bg-[#fffaf9] text-[#342B25] border border-[#EEE4DA] w-3xl  rounded-xl m-auto">
-                <form id="recipeForm">
-                    <input name="name" placeholder="Nom de la recette" required><br>
-                    <select name="category" class="">
+        <dialog id="recipeDialog" class="  m-auto p-6 rounded-lg">
+            <div class=" flex justify-between">
+                <h1 class="bg-[#FFFDF9] text-[#342B25] font-bold">Ajouter une reccete :</h1>
+                <button id="close" class="flex border border-red-600 text-white bg-red-600 rounded-md m-1 pl-1 pr-1 ">X</button>
+            </div>
+            <div class="h-62 bg-[#fffaf9] text-[#342B25] border border-[#EEE4DA] w-3xl  rounded-xl ">
+                <form id="recipeForm"  class="flex h-full flex-col items-center justify-center gap-2">
+                    <input class="border border-[#EEE4DA] rounded-md" name="name" placeholder="Nom de la recette" required><br>
+                    <select name="category" class="border border-[#EEE4DA] rounded-md">
                         <option>Entrée</option>
                         <option>Plat</option>
                         <option>Dessert</option>
                     </select><br>
-                    <input name="price" type="number" min="0" placeholder="Prix en DH" required><br>
-                    <button type="submit">Ajouter</button>
+                    
+                <input class="border border-[#EEE4DA] rounded-md" name="price" type="number" min="0" max="50" placeholder="Prix en DH" required><br>
+                    <button class="border border-[#EEE4DA] rounded-md p-2 bg-[#B85F3D] text-white font-bold " type="submit ">Ajouter</button>
                 </form>
             </div>
         </dialog>
     </main>
-    <script>
-    const dialog = document.getElementById('recipeDialog');
-
-document.getElementById('openRecipeForm').addEventListener('click', () => {
-  dialog.showModal();});
-  const form = document.getElementById('recipeForm');
-const recipeList = document.getElementById('recipeList');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  const data = new FormData(form);
-  const card = document.createElement('div');
-  card.textContent =
-    `${data.get('name')} · ${data.get('category')} · ${data.get('price')} DH`;
-
-  recipeList.append(card);
-  form.reset();
-  dialog.close();
-});
-</script>
-
+<script src="./js/app.js"></script>
 
 </body>
 
