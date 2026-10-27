@@ -2,6 +2,16 @@ const dialog = document.getElementById('recipeDialog');
 const form = document.getElementById('recipeForm');
 const recipeList = document.getElementById('recipeList');
 const fermer = document.getElementById('close');
+const dialogé = document.querySelector("#editDialog");
+const editForm = document.querySelector("#editForm");
+document.querySelector("#closeEdit").addEventListener("click", function () {
+  editDialog.close();
+});
+
+document.querySelector("#cancelEdit").addEventListener("click", function () {
+  editDialog.close();
+});
+
 
 fermer.addEventListener('click', () => {
   dialog.close();
@@ -33,14 +43,36 @@ form.addEventListener('submit', (event) => {
 
   const prix = document.createElement('span');
   prix.textContent = ` · ${price} DH`;
+  const btnDelet=document.createElement('button')
+  btnDelet.textContent = 'Delete';
+   btnDelet.addEventListener('click',function(){
+    card.remove()
+  })
+  const bntModifier = document.createElement('button')
+  bntModifier.textContent='Modifier'
+ bntModifier.addEventListener('click',function(){
+  editForm.elements.name.value = name;
+  editForm.elements.category.value = category;
+  editForm.elements.price.value = price;
+  dialogé.showModal();
+ })
+ editForm.addEventListener("submit", function (event) {
+  event.preventDefault(); // كيمنع reload ديال الصفحة
 
-  card.append(title, cate, prix);
-  recipeList.append(card);
+  // حدّث معلومات الكارت
+  title.textContent = editForm.elements.name.value;
+  cate.textContent = ` · ${editForm.elements.category.value}`;
+  prix.textContent = ` · ${editForm.elements.price.value} DH`;
 
+  // سدّ popup
+  editDialog.close();
+});
+  card.append(title, cate, prix,btnDelet,bntModifier);
+recipeList.append(card);
   document.querySelectorAll('select[data-category]').forEach((selectMenu) => {
     if (selectMenu.dataset.category === category) {
       const option = document.createElement('option');
-      //
+      
       option.dataset.price = price
       option.value = name;
       option.textContent = `${name} · ${price} DH`;
